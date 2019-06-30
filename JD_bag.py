@@ -23,6 +23,31 @@ def get_text(url):
     # requests会自动推测编码的，不写这个也行
     r.raise_for_status
     # 如果有异常这就是抛出异常用的
-    print(r.text)
+    return r.text
 
-get_text("https://search.jd.com/Search?keyword=%E4%B9%A6%E5%8C%85&enc=utf-8&wq=%E4%B9%A6%E5%8C%85&pvid=cacd21b19bb746d4927aae1ea15028e2 ")
+
+def get_info(text, title, price):
+    soup = BeautifulSoup(text, 'html.parser')
+    # 后面这些用开发者模式来看就能找到
+    # 不过表示京东的比较好找
+    names = soup.find_all("div",class_="p-name p-name-type-2")
+    prices = soup.find_all("div", class_="p-price")
+    for i in range(len(names)):
+        # 后面.什么是树状结构的，name里面<a>里面再<em>里面的，就是我们要的文本了
+        title.append(names[i].a.em.text)
+        price.append(prices[i].strong.i.text)
+
+
+def print_info(names, prices):
+    t="{0:^3}\t{1:^8}\t{2:^50}"
+    # 格式化字符串打印，：是格式限定符
+    # ^是居中，后面的数字是宽度
+    for i in range(len(names)):
+        print(t.format(i+1,prices[i],names[i]))
+
+
+url = "https://search.jd.com/Search?keyword=%E4%B9%A6%E5%8C%85&enc=utf-8&wq=%E4%B9%A6%E5%8C%85&pvid=cacd21b19bb746d4927aae1ea15028e2 "
+name = []
+price = []
+get_info(get_text(url), name, price)
+print_info(name, price)
