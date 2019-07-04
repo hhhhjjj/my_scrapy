@@ -1,10 +1,10 @@
-# 在这不能直接用scrapy crawl douban这个命令
-# 要进如PythonScrapy这个文件夹里面才可以用这个命令
+# scrapy crawl douban_movie_top250 -o douban.csv
 # spider就是用来抓取信息的，定义用于下载url列表，跟踪链接的方案，解析网页的方式
 # 用来提取items
 import scrapy
 from PythonScrapy.items import PythonscrapyItem
 # 就是这个样子用，因为你操作cmd的时候这样才能找到
+# spiders生成request，然后传到downloader执行request返回response给spiders
 
 class douban_spider(scrapy.Spider):
     name = 'douban_movie_top250'
@@ -14,6 +14,7 @@ class douban_spider(scrapy.Spider):
     }
 
     def start_requests(self):
+        # 这个函数必须返回可迭代对象，对象包含用于爬取的第一个request
         url = 'https://movie.douban.com/top250'
         yield scrapy.Request(url, headers=self.headers)
     #     注意这个是在scrapy里面
