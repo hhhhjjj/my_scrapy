@@ -14,6 +14,8 @@ BOT_NAME = 'PythonScrapy'
 SPIDER_MODULES = ['PythonScrapy.spiders']
 NEWSPIDER_MODULE = 'PythonScrapy.spiders'
 
+FEED_EXPORT_ENCODING = "gb18030"
+# 用这个解决出来的csv是乱码
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'PythonScrapy (+http://www.yourdomain.com)'
