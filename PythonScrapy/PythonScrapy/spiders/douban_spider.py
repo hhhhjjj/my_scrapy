@@ -3,8 +3,8 @@
 # spider就是用来抓取信息的，定义用于下载url列表，跟踪链接的方案，解析网页的方式
 # 用来提取items
 import scrapy
-from PythonScrapy.PythonScrapy.items import PythonscrapyItem
-
+from PythonScrapy.items import PythonscrapyItem
+# 就是这个样子用，因为你操作cmd的时候这样才能找到
 
 class douban_spider(scrapy.Spider):
     name = 'douban_movie_top250'
@@ -15,7 +15,8 @@ class douban_spider(scrapy.Spider):
 
     def start_requests(self):
         url = 'https://movie.douban.com/top250'
-        yield Request(url, headers=self.headers)
+        yield scrapy.Request(url, headers=self.headers)
+    #     注意这个是在scrapy里面
 
     def parse(self, response):
         item = PythonscrapyItem()
