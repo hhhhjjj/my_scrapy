@@ -35,4 +35,5 @@ class douban_spider(scrapy.Spider):
                 './/div[@class="star"]/span/text()').re(r'(\d+)人评价')[0]
             # 在这不要用ur，太老了，用r就行了
             yield item
+#             yield有迭代功能，能代替循环
 
