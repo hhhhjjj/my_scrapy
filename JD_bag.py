@@ -16,6 +16,8 @@ headers = {
 'Upgrade-Insecure-Requests': '1',
 'TE': 'Trailers',
 }
+# headers里面可以直接加上手动访问成功的cookie，在一些比较垃圾的网站就可以直接访问进去了
+# 就不用每次都登陆了
 
 def get_text(url):
     r = requests.get(url, headers=headers)
@@ -51,3 +53,12 @@ name = []
 price = []
 get_info(get_text(url), name, price)
 print_info(name, price)
+# 遇到登陆页面的
+# 不一定要selenium，有的小网站你知道开发方式，用post或者get方式也能登陆
+# 去network里面看提交的方式这些
+# 有的大网站也有本事用get来提交的，自己有办法加密，一定要带上他们自己加上的东西
+# 然后多试试找出规律
+# 验证码这种，我们先手动一次，拿到cookie
+# 之后就用这个cookie了
+# 有的比较麻烦的，不同时刻密码不同的
+# 这种要带上时间戳提交，一点点猜
