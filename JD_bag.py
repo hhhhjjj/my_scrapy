@@ -3,6 +3,13 @@ import requests
 # 注意有个s在后面
 from bs4 import BeautifulSoup
 # 如果网站出现变动，正则表达式就需要修改，bs就好许多
+# from http import cookiejar
+# # py2是直接导入cookielib，py3这改成这样子了
+# from urllib import request
+# cj = cookiejar.CookieJar()
+# handler = request.HTTPCookieProcessor(cj)
+# # 这个也是要改成这样子才能找到。请求中的cookie会自动存储到cj中，当然这个也可以存到本地
+# opener = request.build_opener(handler)
 
 
 # 好歹需要带上个头，不然京东多没面子
@@ -21,6 +28,8 @@ headers = {
 
 def get_text(url):
     r = requests.get(url, headers=headers)
+    # html = opener.open(request).read().decode('utf-8')
+    # 要用上cookie就要用这个方法来发送请求
     r.encoding = 'utf-8'
     # requests会自动推测编码的，不写这个也行
     r.raise_for_status
@@ -59,6 +68,7 @@ print_info(name, price)
 # 有的大网站也有本事用get来提交的，自己有办法加密，一定要带上他们自己加上的东西
 # 然后多试试找出规律
 # 验证码这种，我们先手动一次，拿到cookie
-# 之后就用这个cookie了
+# 之后就用这个cookie了，别死磕图像识别
 # 有的比较麻烦的，不同时刻密码不同的
 # 这种要带上时间戳提交，一点点猜
+# 有的登陆写到js里面，而不是写到表单里面，要一点点找
