@@ -2,7 +2,7 @@
 import requests
 # 注意有个s在后面
 from bs4 import BeautifulSoup
-# 如果网站出现变动，正则表达式就需要修改，bs就好许多
+# 如果网站出现变动，正则表达式就需要修改，bs就好许多，现在一般用正则表达式的也少了
 # from http import cookiejar
 # # py2是直接导入cookielib，py3这改成这样子了
 # from urllib import request
@@ -75,4 +75,6 @@ print_info(name, price)
 # 反正就是先手动登陆一次，看服务器需要什么，对比着找
 # 要么改cookie，要么改session
 # cookie在浏览器，session在服务器
+# 服务器根据客户端来的session_id去查数据库里面的session表，看是否登陆过
+# 拿到cookie就没有安全性可言了
 
