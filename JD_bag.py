@@ -28,7 +28,29 @@ headers = {
 
 def get_text(url):
     r = requests.get(url, headers=headers)
+    # print(r.cookies)
+    # 这个可以打印看看
+    print(requests.utils.dict_from_cookiejar(r.cookies))
+    # 这个能打印出来字典形式的cookie
+
+    # 看cookie的方式：
+    # 通过response.cookie返回的是最后一个页面的cookie
+    # 如果最后一个页面的开发人员压根没设置cookie，那就显示没有
+    # 但是实际上是应该有的
+
+    # 如果用request.session.cookie
+    # 返回的就是中间页面的cookies
+
+    # 还有cookies._cookies这种
+    # 反正每一个都打印出来看看，一般就是这三种方法
+
     # 登陆注册用post也行，记得带上data
+    # 要看看网站开发的人需要的是什么格式的数据
+
+    # 如果是get方式提交登陆
+    # requests.get(url, params=...)
+    # 这样子可以把登陆的账号和密码加到url？后面去
+
     # html = opener.open(request).read().decode('utf-8')
     # 要用上cookie就要用这个方法来发送请求
     r.encoding = 'utf-8'
