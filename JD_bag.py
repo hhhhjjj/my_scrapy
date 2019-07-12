@@ -28,6 +28,7 @@ headers = {
 
 def get_text(url):
     r = requests.get(url, headers=headers)
+    # 登陆注册用post也行，记得带上data
     # html = opener.open(request).read().decode('utf-8')
     # 要用上cookie就要用这个方法来发送请求
     r.encoding = 'utf-8'
