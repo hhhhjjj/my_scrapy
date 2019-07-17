@@ -35,14 +35,16 @@ def get_text(url):
 
     # 看cookie的方式：
     # 通过response.cookie返回的是最后一个页面的cookie
+    # 中间的cookie不保存
     # 如果最后一个页面的开发人员压根没设置cookie，那就显示没有
-    # 但是实际上是应该有的
+    # 但是实际上中间的cookies是应该有的
 
     # 如果用request.session.cookie
-    # 返回的就是中间页面的cookies
+    # 返回的就是所有的cookieJar，一般就用这种就行了
 
-    # 还有cookies._cookies这种
+    # 还有request.__cookies这种
     # 反正每一个都打印出来看看，一般就是这三种方法
+    # 返回的格式也有所不同
 
     # 登陆注册用post也行，记得带上data
     # 要看看网站开发的人需要的是什么格式的数据
