@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fb684bc-7c07-4723-a169-b986d91f2394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/my_mongodb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy_TXvideo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tx_video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_headless.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_headless.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +20,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my_headless.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+              <folding>
+                <element signature="e#178#208#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrapy_TXvideo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="413">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -36,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_mongodb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="173">
+              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -68,11 +76,11 @@
         <option value="$PROJECT_DIR$/PythonScrapy/Xiaohua/Xiaohua/spiders/xiaohua.py" />
         <option value="$PROJECT_DIR$/my_re.py" />
         <option value="$PROJECT_DIR$/JD_bag.py" />
-        <option value="$PROJECT_DIR$/my_headless.py" />
         <option value="$PROJECT_DIR$/log.py" />
         <option value="$PROJECT_DIR$/tx_video.html" />
         <option value="$PROJECT_DIR$/scrapy_TXvideo.py" />
         <option value="$PROJECT_DIR$/my_mongodb.py" />
+        <option value="$PROJECT_DIR$/my_headless.py" />
       </list>
     </option>
   </component>
@@ -266,7 +274,7 @@
       <workItem from="1562934818615" duration="2686000" />
       <workItem from="1563363242665" duration="8768000" />
       <workItem from="1563536144586" duration="1588000" />
-      <workItem from="1563602704491" duration="3914000" />
+      <workItem from="1563602704491" duration="4337000" />
     </task>
     <task id="LOCAL-00001" summary="finish">
       <created>1561864554574</created>
@@ -307,18 +315,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57203000" />
+    <option name="totallyTimeSpent" value="57626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14410187" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14410187" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36260623" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.7577904" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -327,7 +335,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.08356941" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.7549575" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -345,7 +353,8 @@
     <MESSAGE value="spider" />
     <MESSAGE value="decode is wrong" />
     <MESSAGE value="resolve decode problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolve decode problem" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/hhhhjjj/my_scrapy&#10;&#10;# Conflicts:&#10;#&#9;my_headless.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/PythonScrapy/scrapy.cfg">
@@ -496,30 +505,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_headless.py">
+    <entry file="file://$PROJECT_DIR$/my_mongodb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" selection-start-line="20" selection-end-line="28" selection-end-column="16" />
-          <folding>
-            <element signature="e#178#208#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="173">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scrapy_TXvideo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="413">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_mongodb.py">
+    <entry file="file://$PROJECT_DIR$/my_headless.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="279">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#178#208#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
