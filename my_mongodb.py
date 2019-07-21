@@ -7,8 +7,10 @@ video = mydb["video"]
 
 
 def add_video(video_title, video_image, video_href):
-    add_video = {"title": video_title, "image": video_image, "href": video_href}
-    video.insert_one(add_video)
+    the_video = {"title": video_title, "image": video_image, "href": video_href}
+    # 用插入可能导致重复，在这用更新就行了
+    video.update({"title": video_title},{'$set': the_video}, True)
+    print(the_video)
 # mydict = {"name": "jjj"}
 #
 # title.insert_one(mydict)
@@ -23,5 +25,5 @@ def add_video(video_title, video_image, video_href):
 # title.delete_many({})
 #
 # # 删除后输出
-for x in video.find():
-  print(x)
+# for x in video.find():
+#   print(x)
