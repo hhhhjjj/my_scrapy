@@ -9,6 +9,7 @@ video = mydb["video"]
 def add_video(video_title, video_image, video_href):
     the_video = {"title": video_title, "image": video_image, "href": video_href}
     # 用插入可能导致重复，在这用更新就行了
+    # 拿到的是图片地址，想看就构造一个请求一样的就可以了
     video.update({"title": video_title},{'$set': the_video}, True)
     print(the_video)
 # mydict = {"name": "jjj"}
