@@ -1,5 +1,6 @@
 import win32gui
 import time
+import win32api
 # 这个库能够界面图形化操作，不用通过像素点来点击，可以通过窗口，按键这些来
 # 比如找到当前弹出的窗口里面找到选择文件的窗口，然后找到文本框，然后找到确定按键
 # 可以下载个spy++来找到窗口还有控件的名字
@@ -48,11 +49,24 @@ time.sleep(0.5)
 find_element("create-type__link js_MsgSenderLinkBt")
 driver.find_element_by_css_selector(".create-type__link.js_MsgSenderLinkBt").click()
 time.sleep(0.5)
-find_element("title")
-driver.find_element_by_name("title").click()
-driver.find_element_by_name("title").send_keys("selenium login and write")
-driver.find_element_by_id("author").send_keys("James He")
-driver.find_element_by_id("edui1_contentplaceholder").send_keys("https://github.com/hhhhjjj/my_scrapy")
-driver.find_element_by_class_name("icon_media_choose edui-default").click()
-driver.find_element_by_class_name("edui-default").click()
-
+all_windows = driver.window_handles
+driver.switch_to.window(all_windows[2])
+# 注意这里又弹出了新的窗口，所以需要改，不然会一直报错找不到
+find_element("请在这里输入标题")
+driver.find_element_by_xpath('//*[@id="title"]').send_keys("selenium login and write")
+driver.find_element_by_xpath('//*[@id="author"]').send_keys("James He")
+driver.find_element_by_xpath('//*[@id="ueditor_0"]').send_keys("https://github.com/hhhhjjj/my_scrapy")
+driver.find_element_by_id("js_editor_insertimage").click()
+find_element('ul class="tpl_dropdown_menu edui-default" style=""')
+# 这样子才能确定下拉菜单显示出来了
+driver.find_element_by_xpath("//input[@class = ' edui-default']").click()
+# 这个有空格要注意
+print("edui-default")
+# use win32gui and spy++ to select windows and picture
+time.sleep(0.5)
+while True:
+    if win32gui.FindWindow(None, "打开") != 0:
+        break
+    else:
+        continue
+win32gui.FindWindow("Edit", None)
