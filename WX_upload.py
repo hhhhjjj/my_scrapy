@@ -2,6 +2,7 @@ import win32gui
 import time
 import win32api
 import win32con
+from selenium.webdriver.common.action_chains import ActionChains
 # 这个库能够界面图形化操作，不用通过像素点来点击，可以通过窗口，按键这些来
 # 比如找到当前弹出的窗口里面找到选择文件的窗口，然后找到文本框，然后找到确定按键
 # 可以下载个spy++来找到窗口还有控件的名字
@@ -79,9 +80,44 @@ win32gui.SendMessage(edit_handle, win32con.WM_SETTEXT, None, r'C:\Users\hh\Deskt
 open_button = win32gui.FindWindowEx(window_handle, 0, 'Button', None)
 win32gui.SendMessage(window_handle, win32con.WM_COMMAND, 1, open_button)
 # 按button
-js = "var q=document.documentElement.scrollTop=10000"
+js = "var q=document.documentElement.scrollTop=1200"
+time.sleep(0.5)
 driver.execute_script(js)
-# driver.find_element_by_xpath("//span[@class = 'btn btn_input btn_default r']").click()
+driver.find_element_by_id("js_cover_area").click()
+driver.find_element_by_id("js_imagedialog").click()
+find_element("本地上传")
+driver.find_element_by_xpath("//span[@class = 'upload_area webuploader-container']").click()
+# 这个上传的id总是变，不能用id定位
+
+time.sleep(0.5)
+while True:
+    if win32gui.FindWindow(None, "打开") != 0:
+        break
+    else:
+        continue
+window_handle = win32gui.FindWindow(None, "打开")
+ComboBoxEx32 = win32gui.FindWindowEx(window_handle, 0, 'ComboBoxEx32', None)
+# 中间有个这个，特别难找到
+combobox_handle = win32gui.FindWindowEx(ComboBoxEx32, 0, "ComboBox", "")
+edit_handle = win32gui.FindWindowEx(combobox_handle, 0, "Edit", None)
+win32gui.SendMessage(edit_handle, win32con.WM_SETTEXT, None, r'C:\Users\hh\Desktop\selenium.png')
+# 往输入框输入绝对地址
+open_button = win32gui.FindWindowEx(window_handle, 0, 'Button', None)
+win32gui.SendMessage(window_handle, win32con.WM_COMMAND, 1, open_button)
+# 按button
+
+find_element("weui-desktop-step current ")
+driver.find_element_by_xpath("//span[@class = 'js_crop_done_btn btn btn_primary btn_input js_btn_p']").click()
+
+while True:
+    if driver.page_source.find("完成") == -1:
+        # 这个打印出来知道是不等于1的，所以需要用不等于-1的情况
+        break
+    else:
+        time.sleep(1)
+        continue
+
+driver.find_element_by_xpath("//span[@class = 'btn btn_input btn_default r']").click()
 # # 发送
 
 
