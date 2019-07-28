@@ -55,7 +55,7 @@ all_windows = driver.window_handles
 driver.switch_to.window(all_windows[2])
 # 注意这里又弹出了新的窗口，所以需要改，不然会一直报错找不到
 find_element("请在这里输入标题")
-driver.find_element_by_xpath('//*[@id="title"]').send_keys("selenium login and upload")
+driver.find_element_by_xpath('//*[@id="title"]').send_keys("automatic operate by selenium")
 driver.find_element_by_xpath('//*[@id="author"]').send_keys("James He")
 driver.find_element_by_xpath('//*[@id="ueditor_0"]').send_keys("https://github.com/hhhhjjj/my_scrapy/blob/master/WX_upload.py")
 driver.find_element_by_id("js_editor_insertimage").click()
@@ -105,19 +105,25 @@ win32gui.SendMessage(edit_handle, win32con.WM_SETTEXT, None, r'C:\Users\hh\Deskt
 open_button = win32gui.FindWindowEx(window_handle, 0, 'Button', None)
 win32gui.SendMessage(window_handle, win32con.WM_COMMAND, 1, open_button)
 # 按button
-
+# 上传完成之后要等图片加载出来，不然会提示选择裁切区域
+time.sleep(0.5)
 find_element("weui-desktop-step current ")
-driver.find_element_by_xpath("//span[@class = 'js_crop_done_btn btn btn_primary btn_input js_btn_p']").click()
+try:
+    while True:
+        driver.find_element_by_xpath("//span[@class = 'js_crop_done_btn btn btn_primary btn_input js_btn_p']").click()
+        if driver.page_source.find("剪裁封面") == -1:
+            # 这个打印出来知道是不等于1的，所以需要用不等于-1的情况
+            break
+        else:
+            time.sleep(1)
+            continue
+except:
+    print("准备发送")
+time.sleep(0.5)
 
-while True:
-    if driver.page_source.find("完成") == -1:
-        # 这个打印出来知道是不等于1的，所以需要用不等于-1的情况
-        break
-    else:
-        time.sleep(1)
-        continue
+# 原创声明这个懒得弄了，不是功能项，而且需要三百个字
 
-driver.find_element_by_xpath("//span[@class = 'btn btn_input btn_default r']").click()
-# # 发送
+# driver.find_element_by_xpath("//span[@class = 'btn btn_input btn_default r']").click()
+# # 发送特别麻烦，还要各种扫码，后面的都一个套路，不弄了
 
 
