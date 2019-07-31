@@ -21,8 +21,8 @@ driver = webdriver.Chrome(executable_path=r"C:\Program Files (x86)\Google\Chrome
                           , options=chrome_option)
 driver.get("https://mp.weixin.qq.com")
 driver.maximize_window()
-driver.find_element_by_name("account").send_keys("")
-driver.find_element_by_name("password").send_keys("")
+driver.find_element_by_name("account").send_keys("1094231447@qq.com")
+driver.find_element_by_name("password").send_keys("hjk1996829")
 driver.find_element_by_class_name("btn_login").click()
 time.sleep(5)
 # wx的cookie只能一天，所以还是手动扫码吧
@@ -152,7 +152,7 @@ for a_video in video.find():
                 break
             except:
                 continue
-# 原创声明这个懒得弄了，不是功能项，而且需要三百个字
+# 原创声明这个懒得弄了
 
 # driver.find_element_by_xpath("//span[@class = 'btn btn_input btn_default r']").click()
 # # 发送特别麻烦，还要各种扫码，后面的都一个套路，不弄了
